@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FaceTsek</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Avenir;
+      }
+      .main-container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+      }
+      .v-container {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 280px;
+        background-color: #aeeef51d;
+        height: 100vh;
+        overflow: auto;
+      }
+      .v-logo {
+        max-width: 80px;
+        margin: auto;
+        margin-top: 50px;
+      }
+      .verified {
+        margin-top: 100px;
+        font-size: 30px;
+        color: green;
+        text-align: center;
+        font-weight: bolder;
+      }
+      .v-container1 {
+        margin: auto;
+        margin-top: 10px;
+        background-color: #002235;
+        max-width: 90%;
+        color: #ffffff;
+        padding: 20px 20px 20px 20px;
+        border-radius: 10px;
+      }
+      .v-container1 p {
+        padding: 5px;
+        font-size: 20px;
+      }
+      .v-container2 {
+        margin: auto;
+        max-width: 350px;
+        color: black;
+        padding: 10px 20px 10px 20px;
+        margin-top: 20px;
+        text-align: center;
+      }
+      .b-yes {
+        border: 1px solid;
+        padding: 3px 30px 3px 30px;
+        border-radius: 20px;
+        margin: 10px;
+      }
+      .b-no {
+        border: 1px solid;
+        padding: 3px 30px 3px 30px;
+        border-radius: 20px;
+        margin: 10px;
+      }
+      .camera-container {
+        flex: 1;
+        box-sizing: border-box;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- sidebar -->
+      <div class="v-container">
+        <img class="v-logo" src="assets/image/logo.png" alt="" />
+        <p class="verified">VERIFIED</p>
+        <div class="v-container1">
+          <p>ID:</p>
+          <p>Name:</p>
+          <p>Date:</p>
+          <p>Time in:</p>
+        </div>
+        <div class="v-container2">
+          <p>Is your Info Correct?</p>
+          <div class="button">
+            <button class="b-yes" type="button">Yes</button>
+            <button class="b-no" type="button">No</button>
+          </div>
+        </div>
+      </div>
+      <!--- flexed container -->
+      <div class="camera-container">
+        <img src="{{ url_for('video_feed') }}" width="80%" />
+      </div>
+    </div>
+  </body>
+</html>
